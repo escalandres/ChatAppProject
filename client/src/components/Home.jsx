@@ -78,6 +78,9 @@ const Home = () => {
                         <a href="#" className="btn__browser">Abrir Chat en tu navegador</a>
                     </div>
                 </div>
+                <div>
+                    <img src=""></img>
+                </div>
             </div>
         </section>
     </div>
