@@ -1,44 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
-import { Redirect } from "react-router-dom"
-import { withRouter, Route, BrowserRouter, Switch, Link } from 'react-router-dom';
-import Home from './Home';
-import Router from './Router'
-
-// const homeSwitch = () => {
-//     this.state = {
-//         condition: false
-//     }
-//     handleClick () => {
-        
-//         axios.post(/*URL*/)
-//             .then(() => this.setState({ condition: true }));
-//     }
-//     const { condition } = this.state;
-//     if (condition) {
-//         return <Redirect to='/Home'/>;
-//     }
-//     return <button onClick={() => this.handleClick()}>Redirect</button>;
-// }
-
-// const homeS = () => {
-//     console.log("Funciona");
-//     // <Redirect to='/home'/>
-//     // return this.props.history.push('/home');
-//     //<Route path="home" component={Home} />
-//     //render(<BrowserRouter><Home /></BrowserRouter>, document.getElementById('root'));
-//     return (
-//         <Route
-//             <Redirect
-//                 to={{
-//                     pathname: "/login",
-//                     state: { from: location }
-//                 }}
-//               />
-//         />
-//       );
-// }
 
 // import signinImage from '../assets/signup.jpg';
 
@@ -180,28 +142,8 @@ const Auth = () => {
                             </span>
                         </p>
                     </div>
-                    <div>
-                        <span>
-                            <BrowserRouter>
-                                <Link to='/home'>Home</Link>
-                            </BrowserRouter>
-                            {/* <span onClick={switchMode}>
-                            {isSignup ? 'Sign In' : 'Sign Up'}
-                            </span>
-                            {<Redirect to='/home'/>} */}
-                        </span>
-                        {/* <a href='/home'>Homaaa
-                            {/* <BrowserRouter>
-                                <Link to='/home'>Home</Link>
-                            </BrowserRouter> 
-                            <Home />
-                        </a> */}
-                    </div>
                 </div> 
             </div>
-            {/* <div className="auth__form-container_image">
-                <img src={signinImage} alt="sign in" />
-            </div> */}
         </div>
     )
 }

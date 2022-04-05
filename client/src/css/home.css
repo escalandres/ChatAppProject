@@ -10,7 +10,7 @@
 }
 
 
-body{
+.all{
     background-color: var(--background-color);
 }
 .navbar{
@@ -31,8 +31,9 @@ body{
 .navbar__logo{
     width: 60px;
     height: 60px;
-    background: url('../assets/logoWhite.png') no-repeat center center;
+    background: url('../assets/chatLogo.png') no-repeat center center;
     background-size: cover;
+    border-radius: 100%;
 }
 .navbar__logo__text{
     font-weight: 900;

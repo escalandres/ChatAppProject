@@ -13,6 +13,7 @@
     "@uppy/xhr-upload": "^2.0.7",
     "axios": "^0.26.1",
     "bulma": "^0.9.3",
+    "font-awesome": "^4.7.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^5.2.0",
