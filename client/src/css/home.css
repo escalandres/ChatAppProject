@@ -7,6 +7,13 @@
     --background-color: rgb(64,78,237);
     --letter-color: #ffffff;
     --not-quite-dark: #23272a;
+    --blue-300: #88c8f7;
+    --blue-800: #063251;
+    --height: 1rem;
+    --duration: 0.25s;
+    --body-bg: #fbfdfe;
+    --dt-darkest: #121a21;
+    /* --body-bg: #192229; */
 }
 
 
@@ -73,6 +80,158 @@
     color: var(--background-color);
     box-shadow: 0px 6px 6px 0px rgba(30, 30, 31, 0.5);
 }
+
+/* Them btn */
+
+.theme__container__btn{
+    /* border: 10px solid red; */
+    padding-top: 26px;
+}
+
+
+.s-cursor-pointer {
+    cursor: pointer;
+}
+
+.s-relative {
+    position: relative;
+}
+
+.toggle-dark-mode {
+    --toggle-color: var(--blue-300);
+    display: inline-block;
+    width: 42px;
+    height: var(--height);
+    background: var(--toggle-color);
+    border-radius: var(--height);
+}
+
+label {
+    cursor: default;
+}
+
+.s-cross-center {
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    align-content: center;
+}
+
+.s-cross-center{
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.s-opacity-0 {
+    opacity: 0;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+    box-sizing: border-box;
+}
+
+/* .toggle-dark-mode .slider {
+    --toggle-color: var(--blue-300);
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    left: 0%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-transition: left var(--duration),-webkit-transform var(--duration);
+    transition: left var(--duration),-webkit-transform var(--duration);
+    transition: left var(--duration),transform var(--duration);
+    transition: left var(--duration),transform var(--duration),-webkit-transform var(--duration);
+    background: var(--body-bg) url('../assets/icons/sun-svgrepo-com4\ \(3\).svg') no-repeat center;
+    border: 1px solid var(--toggle-color);
+} */
+
+.toggle-dark-mode .slider {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    top: 50%;
+    -webkit-transition: left var(--duration),-webkit-transform var(--duration);
+    /* transition: left var(--duration),-webkit-transform var(--duration);
+    transition: left var(--duration),transform var(--duration); */
+    transition: left var(--duration),transform var(--duration),-webkit-transform var(--duration);
+}
+
+.light-theme-toggle{
+    --toggle-color: var(--blue-300);
+    background: var(--toggle-color);
+    left: 0%;
+}
+
+.dark-theme-toggle{
+    --toggle-color: var(--blue-800);
+    background: var(--toggle-color);
+    left: 0%;
+}
+
+.light-theme-span{
+    --toggle-color: var(--blue-300);
+    left: 0%;
+    transform: translateY(-50%);
+    background: var(--body-bg) url('../assets/icons/sun-svgrepo-com4\ \(3\).svg') no-repeat center;
+    border: 1px solid var(--toggle-color);
+}
+
+.dark-theme-span{
+    --toggle-color: var(--blue-800);
+    left: 100%;
+    -webkit-transform: translate(-100%,-50%);
+    transform: translate(-100%,-50%);
+    background: var(--dt-darkest) url('../assets/icons/moon-svgrepo-com.svg') no-repeat center;
+    border: 1px solid var(--toggle-color);
+}
+
+.s-circle {
+    border-radius: 50%;
+}
+.s-h-24px {
+    height: 24px;
+}
+.s-w-24px {
+    width: 24px;
+}
+.s-absolute {
+    position: absolute;
+}
+.s-cursor-pointer {
+    cursor: pointer;
+}
+.card:hover, .s-shadow-bottom {
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+.card:hover, .s-shadow-bottom {
+    -webkit-box-shadow: 0 0.5rem 1rem -0.5rem #ccc;
+    box-shadow: 0 0.5rem 1rem -0.5rem #ccc;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
 
 /* HomePage section */
 
@@ -172,11 +331,35 @@
     margin-left: -4rem;
 }
 
+/* .image__left{
+    width: 350px;
+    height: 340px;
+} */
+
 .image__right__container{
     position: absolute;
+    margin-top: -20%;
+    margin-left: 77%;
 }
 
 .image__right{
     width: 200px;
     height: 200px;
 }
+
+img{
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-top: 0%;
+      
+    }
+  
+    to {
+      margin-top: -20%;
+      
+    }
+  }

@@ -62,12 +62,18 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="theme__container__btn">
+                            <label id="darkModeLabel" class="toggle-dark-mode light-theme-toggle s-cursor-pointer s-relative s-cross-center s-mr-1">
+                                <input id="darkModeInput" class="toggle-input s-opacity-0" type="checkbox" onclick="darkMode()">
+                                <span id="darkModeSpan" class="slider light-theme-span dot s-absolute s-h-24px s-w-24px s-cursor-pointer s-shadow-bottom s-circle"></span>
+                            </label>
+                        </div>
                     </div>
                     <div id="navbar__end1" class="navbar-end navbar__end">
                         <div class="navbar-item">
                             <div class="buttons">
                                 <a class="button navbar__login__btn">
-                                Iniciar sesion
+                                Iniciar sesions
                                 </a>
                             </div>
                         </div>
@@ -78,7 +84,7 @@
         <section id='homepage'>
             <div class="home__container">
                 <div class="image__left__container">
-                    <img src="./src/assets/chatUser.png" alt="">
+                    <img class="image__left" src="./src/assets/chatUser.png" alt="">
                 </div>
                 <div class="home__container__message">
                     <h1 class="home__main-message">
@@ -98,7 +104,7 @@
                 </div>
                 <div class="image__right__container">
                     <div>
-                        <img class="image__right" src="./src/assets/chat.png" alt="">
+                        <img id="messageIcon" class="image__right" src="./src/assets/chat.png" alt="">
                     </div>
                     <div>
                         <img class="image__right" src="./src/assets/robot.png" alt="">
@@ -106,6 +112,8 @@
                 </div>
             </div>
         </section>
+
     </div>
+    <script src="./home.js"></script>
 </body>
 </html>
