@@ -3,6 +3,8 @@
     src: url('../assets/fonts/Ginto\ Nord\ Regular.woff2.ttf');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Roboto+Slab:wght@100&display=swap');
 :root{
     --background-color: rgb(64,78,237);
     --letter-color: #ffffff;
@@ -54,6 +56,10 @@
     /* color: black; */
     font-weight: 700;
     margin-right: 2rem;
+    /* font-family: 'Roboto Slab', serif; */
+    font-family: 'Oxygen', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
 }
 
 .navbar__start{
@@ -86,6 +92,7 @@
 .theme__container__btn{
     /* border: 10px solid red; */
     padding-top: 26px;
+    transform: translateX(-100%);
 }
 
 
@@ -347,19 +354,20 @@ input[type="checkbox" i] {
     height: 200px;
 }
 
-img{
-    animation-duration: 3s;
-    animation-name: slidein;
+.animation{
+    animation-duration: 2s;
+    animation-name: slideup;
+
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-@keyframes slidein {
+@keyframes slideup {
     from {
-      margin-top: 0%;
-      
+        transform: translateY(0%);
     }
-  
     to {
-      margin-top: -20%;
-      
+        transform: translateY(-15%);
     }
-  }
+    
+}
