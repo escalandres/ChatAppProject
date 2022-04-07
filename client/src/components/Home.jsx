@@ -9,6 +9,10 @@ import robot from '../assets/robot.png';
 import chat from '../assets/chat.png';
 import chatUser from '../assets/chatUser.png';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSolid, faDownload, icons } from '@fortawesome/fontawesome-free-solid';
+
+
 const darkMode = () =>{
     const darkModeInput = document.getElementById('darkModeInput');
     const darkModeLabel = document.getElementById('darkModeLabel');
@@ -110,7 +114,8 @@ const Home = () => {
                             </p>
                         </div>
                         <div className="home__message__btn">
-                            <a href="#" className="btn__download"><i className="fa-solid fa-download icons"></i>Descargar para Windows</a>
+                            {/* <a href="#" className="btn__download"><i className="fa-solid fa-download icons"></i>Descargar para Windows</a> */}
+                            <a href="#" className="btn__download"><FontAwesomeIcon icon={faDownload} className="icons" />Descargar para Windows</a>
                             <a href="#" className="btn__browser">Abrir Chat en tu navegador</a>
                         </div>
                     </div>
