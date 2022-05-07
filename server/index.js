@@ -45,26 +45,30 @@ app.post('/', (req, res) => {
     return res.status(200).send('Not a new message request');
 });
 
+app.get('/img', (req,res)=>{
+    res.sendFile(__dirname+'/img/latest.jpg');
+});
+
 app.use('/auth', authRoutes);
 
-const storage = multer.diskStorage({
-	destination: `${_dirname}/uploads/`,
-	filename: (req, file, cb) =>{
-		const fileName = `${Date.now()}${path.extname(file.orginalname)}`;
-		cb(null, fileName);
-	}
+// const storage = multer.diskStorage({
+// 	destination: `${_dirname}/uploads/`,
+// 	filename: (req, file, cb) =>{
+// 		const fileName = `${Date.now()}${path.extname(file.orginalname)}`;
+// 		cb(null, fileName);
+// 	}
 
-})
+// })
 
-const uploadImage = multer({storage}).single('photo');
+// const uploadImage = multer({storage}).single('photo');
 
 
-app.post('/image', uploadImage, (req,res) =>{
-	console.log(req.file);
-	if(req.file) return res.json({msg: 'uploaded'});
+// app.post('/image', uploadImage, (req,res) =>{
+// 	console.log(req.file);
+// 	if(req.file) return res.json({msg: 'uploaded'});
 
-	res.send('Error');
-})
+// 	res.send('Error');
+// })
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

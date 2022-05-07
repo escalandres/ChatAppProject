@@ -1382,7 +1382,7 @@
     font-weight: bold;
     font-size: 11px;
     line-height: 8px;
-    color: #ffffff;
+    color: #030303;
   }
   
   .team-message-input__bottom {
@@ -1825,3 +1825,14 @@
     }
   }
   
+  .str-chat__input-flat .str-chat__textarea>textarea{
+    background: rgb(143, 143, 143);
+    font-weight: 600;
+  }
+  .channel-list__header__text{
+    transform: translate(0%, 70%);
+    font-size: 30px;
+  }
+  .team-channel-header__name ,.user{
+    font-weight: 900;
+  }

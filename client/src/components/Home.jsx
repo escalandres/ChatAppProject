@@ -68,28 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-// const navbarBurger = () =>{
-//     document.addEventListener('DOMContentLoaded', () => {
-//         // Get all "navbar-burger" elements
-//         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-//         // Check if there are any navbar burgers
-//         if ($navbarBurgers.length > 0) {
-//           // Add a click event on each of them
-//           $navbarBurgers.forEach( el => {
-//             el.addEventListener('click', () => {
-//               // Get the target from the "data-target" attribute
-//               const target = el.dataset.target;
-//               const $target = document.getElementById(target);
-//               // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-//               el.classList.toggle('is-active');
-//               $target.classList.toggle('is-active');
-//             });
-//           });
-//         }
-//       });
-// }
-
-
 // import logo from '../assets/logo.svg';
 
 //const container = document.getElementById('app');
@@ -122,9 +100,7 @@ const Home = () => {
                                 <span id="darkModeSpan" className="slider light-theme-span dot s-absolute s-h-24px s-w-24px s-cursor-pointer s-shadow-bottom s-circle"></span>
                             </label>
                         </div>
-                        {/* <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu" onClick={navbarBurger}> */}
                         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-
                             <span id="pri" className="white-line" aria-hidden="true"></span>
                             <span id="pri" className="white-line" aria-hidden="true"></span>
                             <span id="pri" className="white-line" aria-hidden="true"></span>
@@ -145,7 +121,7 @@ const Home = () => {
                             <a className="navbar-item navbar__text">
                                 About
                             </a>
-                            <div className="navbar-item has-dropdown is-hoverable">
+                            <div className="navbar-item has-dropdown is-hoverable drop">
                                 <a className="navbar-link navbar__text">
                                     More
                                 </a>
@@ -166,7 +142,7 @@ const Home = () => {
             <section id='homepage'>
                 <div className="home__container">
                     <div className="image__left__container">
-                        <img className="image__left animation" src={chatUser} alt=""/>
+                        <img className="image__left animation" src={chatUser} alt="Chat Users"/>
                     </div>
                     <div className="home__container__message">
                         <h1 className="home__main-message">
@@ -180,16 +156,16 @@ const Home = () => {
                             </p>
                         </div>
                         <div className="home__message__btn">
-                        <a href="#" className="btn__download home__btn"><FontAwesomeIcon icon={faDownload} className="icons" />Descargar para Windows</a>
-                        <a id="browser" href="#" className="btn__browser home__btn">Abrir Chat en tu navegador</a>
+                            <a href="#" className="btn__download home__btn"><FontAwesomeIcon icon={faDownload} className="icons" />Descargar para Windows</a>
+                            <a id="browser" href="#" className="btn__browser home__btn">Abrir Chat en tu navegador</a>
                         </div>
                     </div>
                     <div className="image__right__container hidden">
                         <div className="image__right__div">
-                            <img id="messageIcon" className="image__right  animation" src={chat} alt=""/>
+                            <img id="messageIcon" className="image__right  animation" src={chat} alt="Chat Image"/>
                         </div>
-                        <div className="image__right__div hidden">
-                            <img className="image__right" src={robot} alt=""/>
+                        <div className="image__right__div robot-hide">
+                            <img className="image__right" src={robot} alt="Robot"/>
                         </div>
                     </div>
                 </div>
