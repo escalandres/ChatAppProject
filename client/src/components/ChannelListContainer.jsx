@@ -8,6 +8,37 @@ import LogoutIcon from '../assets/logout.png'
 
 const cookies = new Cookies();
 
+function darkMode(){
+    const darkModeInput = document.getElementById('darkModeInput');
+    const darkModeLabel = document.getElementById('darkModeLabel');
+    const darkModeSpan = document.getElementById('darkModeSpan');
+    if(darkModeInput.checked===true){
+        darkModeSpan.classList.add("dark-theme-span");
+        darkModeSpan.classList.remove("light-them-span");
+        darkModeLabel.classList.add("dark-theme-toggle");
+        darkModeLabel.classList.remove("light-theme-toggle");
+        document.documentElement.style.setProperty('--primary-color', 'var(--dt-darkest)'); //--body-bg-dark
+        document.documentElement.style.setProperty('--second-primary-color', 'var(--body-bg-dark)'); //--white
+        document.documentElement.style.setProperty('--team-channel-header-name', 'var(--white)'); //--body-bg-dark
+        document.documentElement.style.setProperty('--message-color', 'var(--grey-message)'); //--dt-darkest
+        document.documentElement.style.setProperty('--input-message-color', 'var(--darkest-grey)'); //--dt-darkest
+
+    }
+    else{
+        darkModeSpan.classList.remove("dark-theme-span");
+        darkModeSpan.classList.add("light-them-span");
+        darkModeLabel.classList.remove("dark-theme-toggle");
+        darkModeLabel.classList.add("light-theme-toggle");
+        document.documentElement.style.setProperty('--primary-color', 'var(--primary-color-1)');
+        document.documentElement.style.setProperty('--second-primary-color', 'var(--white)'); //--not-quite-dark
+        document.documentElement.style.setProperty('--team-channel-header-name', 'var(--black)'); //--body-bg
+        document.documentElement.style.setProperty('--message-color', 'var(--black)'); //--white
+        document.documentElement.style.setProperty('--input-message-color', 'var(--ligther-grey)'); //--dt-darkest
+
+    }
+    
+}
+
 const SideBar = ({ logout }) => (
     <div className="channel-list__sidebar">
         <div className="channel-list__sidebar__icon1">
@@ -19,6 +50,12 @@ const SideBar = ({ logout }) => (
             <div className="icon1__inner" onClick={logout}>
                 <img src={LogoutIcon} alt="Logout" width="30" />
             </div>
+        </div>
+        <div className="theme__container__btn">
+            <label id="darkModeLabel" className="toggle-dark-mode light-theme-toggle s-cursor-pointer s-relative s-cross-center s-mr-1">
+                <input id="darkModeInput" className="toggle-input s-opacity-0" type="checkbox" onClick={darkMode}/>
+                <span id="darkModeSpan" className="slider light-theme-span dot s-absolute s-h-24px s-w-24px s-cursor-pointer s-shadow-bottom s-circle"></span>
+            </label>
         </div>
     </div>
 );
@@ -108,6 +145,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
                         />
                     )}
                 />
+                
             </div>
         </>
     );

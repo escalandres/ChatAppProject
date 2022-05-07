@@ -571,7 +571,6 @@ footer{
     .theme__container__btn{
         width: 50px;
         transform: translate(10%,6%);
-        /* transform: translate(570%, 40%); */
     }
     .navbar__brand{
         transform: translateY(0%);
