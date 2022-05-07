@@ -4,10 +4,11 @@
 // import { createRoot } from 'react-dom/client';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bulma/css/bulma.min.css'
-import '../css/home.css'
-import 'font-awesome/css/font-awesome.min.css';
 import App from '../App';
+import 'bulma/css/bulma.min.css'
+import '../css/home.css';
+import 'font-awesome/css/font-awesome.min.css';
+
 
 import robot from '../assets/robot.png';
 import chat from '../assets/chat.png';
@@ -18,7 +19,7 @@ import ImgSec3 from '../assets/ImgSec3.PNG';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons"
-import { faSolid, faDownload, icons  } from '@fortawesome/fontawesome-free-solid';
+import { faDownload } from '@fortawesome/fontawesome-free-solid';
 
 
 function darkMode(){

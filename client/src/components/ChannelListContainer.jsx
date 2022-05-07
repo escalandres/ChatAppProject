@@ -3,8 +3,9 @@ import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-import ChatIcon from '../assets/chatLogo.png'
-import LogoutIcon from '../assets/logout.png'
+import ChatIcon from '../assets/chatLogo.png';
+import LogoutIcon from '../assets/logout.png';
+import '../css/theme.css';
 
 const cookies = new Cookies();
 
@@ -22,6 +23,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--team-channel-header-name', 'var(--white)'); //--body-bg-dark
         document.documentElement.style.setProperty('--message-color', 'var(--grey-message)'); //--dt-darkest
         document.documentElement.style.setProperty('--input-message-color', 'var(--darkest-grey)'); //--dt-darkest
+        document.documentElement.style.setProperty('--edit-channel', 'var(--not-quite-dark)'); //--dt-darkest
 
     }
     else{
@@ -31,9 +33,10 @@ function darkMode(){
         darkModeLabel.classList.add("light-theme-toggle");
         document.documentElement.style.setProperty('--primary-color', 'var(--primary-color-1)');
         document.documentElement.style.setProperty('--second-primary-color', 'var(--white)'); //--not-quite-dark
-        document.documentElement.style.setProperty('--team-channel-header-name', 'var(--black)'); //--body-bg
+        document.documentElement.style.setProperty('--team-channel-header-name', 'var(--dark-grey)'); //--body-bg
         document.documentElement.style.setProperty('--message-color', 'var(--black)'); //--white
         document.documentElement.style.setProperty('--input-message-color', 'var(--ligther-grey)'); //--dt-darkest
+        document.documentElement.style.setProperty('--edit-channel', 'var(--not-quite-white)'); //--dt-darkest
 
     }
     
