@@ -1898,3 +1898,18 @@ div.rta__autocomplete.str-chat__emojisearch {
   font-weight: 600;
   
 }
+
+.icon-container{
+  transform: translate(27%,900%);
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+}
+.icon-container:hover{
+  background:  linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+.setting-icon{
+  color: white;
+  font-size: 25px;
+  transform: translateX(5%);
+}

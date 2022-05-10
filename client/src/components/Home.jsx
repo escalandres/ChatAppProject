@@ -1,10 +1,4 @@
-// Before
-// import { render } from 'react-dom';
-
-// import { createRoot } from 'react-dom/client';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App';
 import 'bulma/css/bulma.min.css'
 import '../css/home.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -68,21 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
-// import logo from '../assets/logo.svg';
-
-//const container = document.getElementById('app');
-
-
-// After
-
-//const root = createRoot(container); // createRoot(container!) if you use TypeScript
-// root.render(<App tab="home" />);
-
-// const renderApp = () => {
-//     ReactDOM.render(<App />, document.getElementById('root'));
-//     // root.render(<App />, document.getElementById('root'));
-// }
 
 const Home = () => {
     return (
@@ -271,6 +250,4 @@ const Home = () => {
     );
 }
 
-
-// export default withRouter(Home);
 export default Home

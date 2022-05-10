@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
-
+import 'font-awesome/css/font-awesome.min.css';
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 import ChatIcon from '../assets/chatLogo.png';
 import LogoutIcon from '../assets/logout.png';
 import '../css/theme.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/fontawesome-free-solid';
+// import { faUser } from '@fortawesome/free-brands-svg-icons';
 
 const cookies = new Cookies();
+
+function settings(){
+    alert('hola')
+}
 
 function darkMode(){
     const darkModeInput = document.getElementById('darkModeInput');
@@ -59,6 +66,10 @@ const SideBar = ({ logout }) => (
                 <input id="darkModeInput" className="toggle-input s-opacity-0" type="checkbox" onClick={darkMode}/>
                 <span id="darkModeSpan" className="slider light-theme-span dot s-absolute s-h-24px s-w-24px s-cursor-pointer s-shadow-bottom s-circle"></span>
             </label>
+        </div>
+        <div className="icon-container" onClick={settings}>
+            <FontAwesomeIcon icon={faUser} className="fa-solid setting-icon"/>
+            {/* <FontAwesomeIcon icon="fa-gear" className="fa-solid setting-icon"/> */}
         </div>
     </div>
 );

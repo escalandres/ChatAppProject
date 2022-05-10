@@ -23,7 +23,6 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     const { message, user: sender, type, members } = req.body;
-
     if(type === 'message.new') {
         members
             .filter((member) => member.user_id !== sender.id)
