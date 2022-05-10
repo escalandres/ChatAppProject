@@ -79,14 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
 //const root = createRoot(container); // createRoot(container!) if you use TypeScript
 // root.render(<App tab="home" />);
 
-const renderApp = () => {
-    ReactDOM.render(<App />, document.getElementById('root'));
-    // root.render(<App />, document.getElementById('root'));
-}
+// const renderApp = () => {
+//     ReactDOM.render(<App />, document.getElementById('root'));
+//     // root.render(<App />, document.getElementById('root'));
+// }
 
 const Home = () => {
     return (
-        // <ScriptTag src="https://kit.fontawesome.com/7ee186d268.js" crossorigin="anonymous" />
         <div className="all">
             <section id='navbar_section'>
                 <nav id="nav-sec" className="navbar" role="navigation" aria-label="main navigation">
@@ -131,7 +130,8 @@ const Home = () => {
                         <div id="navbar__end1" className="navbar-end navbar__end">
                             <div className="navbar-item">
                                 <div className="buttons">
-                                    <a className="button navbar__login__btn" onClick={renderApp}>
+                                    {/* <a className="button navbar__login__btn" onClick={renderApp} href="login"> */}
+                                    <a className="button navbar__login__btn" href="login">
                                     Iniciar sesion
                                     </a>
                                 </div>
