@@ -18,10 +18,10 @@
   --not-quite-white: #f7f6f8;
   --dark-grey:#2c2c30; 
 
-  --primary-color: var(--dt-darkest);
-  --second-primary-color: var(--body-bg-dark);
-  --team-channel-header-name: var(--off-white);
-  --message-color: var(--grey-message);
+  --primary-color: var(--primary-color-1);
+  --second-primary-color: var(--white);
+  --team-channel-header-name: var(--dark-grey);
+  --message-color: var(--black);
   --white--span-background: var(--white);
   --span-radius: 50%;
   --input-message-color: var(--ligther-grey);

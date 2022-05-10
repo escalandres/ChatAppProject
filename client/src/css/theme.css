@@ -1,8 +1,8 @@
   /* Theme btn */
 
-  .theme__container__btn{
+  .theme__container__btn1{
     padding-top: 26px;
-    transform: translate(30%, -20%);
+    transform: translate(20%, -20%);
   }
   
   .s-cursor-pointer {

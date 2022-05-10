@@ -54,7 +54,7 @@ const SideBar = ({ logout }) => (
                 <img src={LogoutIcon} alt="Logout" width="30" />
             </div>
         </div>
-        <div className="theme__container__btn">
+        <div className="theme__container__btn1">
             <label id="darkModeLabel" className="toggle-dark-mode light-theme-toggle s-cursor-pointer s-relative s-cross-center s-mr-1">
                 <input id="darkModeInput" className="toggle-input s-opacity-0" type="checkbox" onClick={darkMode}/>
                 <span id="darkModeSpan" className="slider light-theme-span dot s-absolute s-h-24px s-w-24px s-cursor-pointer s-shadow-bottom s-circle"></span>
