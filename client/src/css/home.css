@@ -37,7 +37,7 @@
     width: 100%;
     background-color: var(--background-color);
     /* background-color: aliceblue; */
-    height: 80px;
+    height: 100px;
     padding-top: 10px;
 }
 .navbar__brand{
@@ -71,7 +71,14 @@
     font-size: 18px;
     padding-top: 20px;
 }
-
+.navbar__text{
+    text-decoration: none;
+}
+.navbar__text:hover{
+    text-decoration: underline;
+    background-color: none;
+    color: var(--white);
+}
 .navbar__start{
     margin-left: 3rem;
 }

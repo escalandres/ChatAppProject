@@ -1,12 +1,53 @@
+:root{
+    --bluish-purple: rgb(64,78,237,1);
+    --not-quite-dark: #23272a;
+    --blue-300: #88c8f7;
+    --blue-800: #063251;
+    --letter-color: #ffffff;
+    --body-bg: #fbfdfe;
+    --dt-darkest: #121a21;
+    --body-bg-dark: #192229;
+    --off-white: #f6f6f6;
+    --white: #fff;
 
+    --height: 1rem;
+    --duration: 0.25s;
+    --font-display: "Ginto Normal","Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    --num-grid-columns: 4;
+
+    --background-color: var(--bluish-purple);
+    --section-color: var(--not-quite-dark);
+    --section-background-white: var(--white);
+    --section-background-off: var(--off-white);
+}
 
 
 .carousel-img{
     width:600px;
+    height: 350px;
+    text-align:center;
+    transform:translateX(62%);
 }
-.carousel-control-prev{
-    color: black;
+
+/* .carousel-control-next,.carousel-control-prev{
+    
+} */
+
+.carousel-control-next-icon{
+    transform: translateX(-120%);
 }
-.carousel-control-next{
-    color: black;
+
+.carousel-control-prev-icon{
+    transform: translateX(120%);
+
+}
+
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    background-color: var(--background-color);
+    color: var(--white);
+    border-radius: 25%;
+}
+
+.popover-img{
+    width: 200px;
 }
