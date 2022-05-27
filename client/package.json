@@ -26,6 +26,7 @@
     "bulma-carousel": "^4.0.24",
     "bulma-popover": "^1.1.1",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0",
     "nth-check": "^2.0.1",
     "react": "^17.0.0",
     "react-bootstrap": "^2.4.0",

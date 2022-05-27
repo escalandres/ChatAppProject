@@ -5,28 +5,24 @@ import 'font-awesome/css/font-awesome.min.css';
 import Navbar from './Navbar';
 import Example from './Example';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel, Popover, ButtonToolbar, Button, Overlay, OverlayTrigger } from 'react-bootstrap';
+import { Carousel} from 'react-bootstrap';
 
 import '../css/descargar.css';
 import ImgSec1 from '../assets/ImgSec1.PNG';
 import ImgSec2 from '../assets/ImgSec2.PNG';
 import ImgSec3 from '../assets/ImgSec3.PNG';
 import cellphone from '../assets/bart.jpg';
-// import Popover from 'react-bootstrap/Popover';
-// import Overlay from 'react-bootstrap/Overlay';
-// import Button from 'react-bootstrap/Button';
-// import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-// import { Carousel} from 'react-bootstrap';
+import chat from '../assets/chitchat.png';
+import $ from 'jquery';
+$(document).ready(function(){
+    $('.zoom').hover(function() {
+        $(this).addClass('transition');
+    }, function() {
+        $(this).removeClass('transition');
+    });
+});
 
-const popover = () => (
-    <Popover id="popover-basic">
-        <Popover.Title as="h3">Popover right</Popover.Title>
-        <Popover.Content>
-        And here's some <strong>amazing</strong> content. It's very engaging.
-        right?
-        </Popover.Content>
-    </Popover>
-    );
+
 // const Descargar = () => {
 class Descargar extends React.Component {
     constructor(props) {
@@ -38,6 +34,7 @@ class Descargar extends React.Component {
           this.state = {
             show: false
           };
+        
     }
     
     render() {
@@ -74,15 +71,20 @@ class Descargar extends React.Component {
                     </Carousel>
                 </section>
                 
-                <section id="section1" className="section-area section-grey">
+                <section id="popover-section" className="section-area section-grey">
+                    <div className='popover-container'>
+                        <Example />
+                    </div>
                     
                 </section>
                 <section id="section2" className="section-area section-white">
-                
+                    <div className="zoom-container">
+                        <img src={chat} className="zoom" alt="zoom"/>
+                    </div>
+                    
                 </section>
                 <section id="section3" className="section-area section-grey">
                 
-                <Example />
                 </section>
                 
             </div>    
