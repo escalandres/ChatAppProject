@@ -1,19 +1,20 @@
 import React from 'react';
-import 'bulma/css/bulma.min.css'
-import '../css/home.css';
-import 'font-awesome/css/font-awesome.min.css';
 import Navbar from './Navbar';
 import Example from './Example';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel} from 'react-bootstrap';
+import { Carousel, ProgressBar, Button} from 'react-bootstrap';
+import $ from 'jquery';
 
+import 'bulma/css/bulma.min.css'
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/home.css';
 import '../css/descargar.css';
+
 import ImgSec1 from '../assets/ImgSec1.PNG';
 import ImgSec2 from '../assets/ImgSec2.PNG';
 import ImgSec3 from '../assets/ImgSec3.PNG';
-import cellphone from '../assets/bart.jpg';
 import chat from '../assets/chitchat.png';
-import $ from 'jquery';
+
 $(document).ready(function(){
     $('.zoom').hover(function() {
         $(this).addClass('transition');
@@ -32,11 +33,27 @@ class Descargar extends React.Component {
           };
       
           this.state = {
-            show: false
+            show: false,
+            progress: 0,
           };
         
     }
-    
+    progressInstance = () =>{
+        this.setState((state, props) => ({
+            progress: 0
+        }));
+        for(let i=0;i<=100;i+=0.1){
+            // this.setState({now: i});
+            this.setState((state, props) => ({
+                progress: i
+            }));
+        }
+    };
+    resetProgress = () =>{
+        this.setState((state, props) => ({
+            progress: 0
+        }));
+    };
     render() {
         return (
             <div>
@@ -84,7 +101,13 @@ class Descargar extends React.Component {
                     
                 </section>
                 <section id="section3" className="section-area section-grey">
-                
+                    {/* <ProgressBar animated now={now} label={`${now}%`} visuallyHidden /> */}
+                    <Button variant="primary" onClick={this.progressInstance}>Primary</Button>
+                    <Button variant="warning" onClick={this.resetProgress}>Reset</Button>
+                    <ProgressBar animated now={this.state.progress} label={`${this.state.progress}%`}  visuallyHidden/>
+
+                    
+                    
                 </section>
                 
             </div>    

@@ -70,8 +70,7 @@
     font-family: 'Oxygen', sans-serif;
     font-size: 18px;
     padding-top: 20px;
-}
-.navbar__text{
+    text-align: center;
     text-decoration: none;
 }
 .navbar__text:hover{
