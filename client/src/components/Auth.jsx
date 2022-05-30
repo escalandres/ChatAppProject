@@ -146,7 +146,7 @@ const Auth = () => {
                     </div>
                 </div> 
             </div>
-            <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 40}}>
+            <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 70}}>
                 <a className="a-btn" href="/"><FontAwesomeIcon className="fa-solid home-btn__icon" icon={faHome} /></a>
             </Button>
         </div>

@@ -44,8 +44,10 @@ body {
 .a-btn:hover{
   color: var(--off-white);
 }
-
-
+/* single */
+.channel-preview__item >p{
+  transform: translateY(8px);
+}
 a{
   text-decoration: none;
 }
@@ -949,7 +951,8 @@ a:hover{
 
 .team-channel-header__name.user {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
+  transform: translate(2px,8px);
 }
 
 .team-channel-header__right {
