@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
-
+import { Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/fontawesome-free-solid';
 // import signinImage from '../assets/signup.jpg';
 
 const cookies = new Cookies();
@@ -144,6 +146,9 @@ const Auth = () => {
                     </div>
                 </div> 
             </div>
+            <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 40}}>
+                <a className="a-btn" href="/"><FontAwesomeIcon className="fa-solid home-btn__icon" icon={faHome} /></a>
+            </Button>
         </div>
     )
 }

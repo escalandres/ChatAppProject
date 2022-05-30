@@ -34,6 +34,18 @@ body {
   padding: 0;
   height: 100%;
 }
+.home-btn__icon{
+  font-size: 25px;
+  transform: translateX(-1px);
+}
+.a-btn{
+  color: var(--white);
+}
+.a-btn:hover{
+  color: var(--off-white);
+}
+
+
 a{
   text-decoration: none;
 }

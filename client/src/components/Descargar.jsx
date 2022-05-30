@@ -1,8 +1,9 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Example from './Example';
 import { Carousel, ProgressBar, Button} from 'react-bootstrap';
 import $ from 'jquery';
+import Navbar from './Navbar';
+import Example from './Example';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import 'bulma/css/bulma.min.css'
 import 'font-awesome/css/font-awesome.min.css';
@@ -105,9 +106,11 @@ class Descargar extends React.Component {
                     <Button variant="primary" onClick={this.progressInstance}>Primary</Button>
                     <Button variant="warning" onClick={this.resetProgress}>Reset</Button>
                     <ProgressBar animated now={this.state.progress} label={`${this.state.progress}%`}  visuallyHidden/>
+                    <br></br>
+                    <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 10}}>
+                        <a className="a-btn" href="login"><FontAwesomeIcon className="fa-solid chat-btn__icon" icon="fa-comment-dots" /></a>
+                    </Button>
 
-                    
-                    
                 </section>
                 
             </div>    

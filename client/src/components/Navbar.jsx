@@ -80,7 +80,7 @@ const Navbar = () => {
                         <a className="navbar-item navbar__text" href="descargar">
                             Descargar
                         </a>
-                        <a className="navbar-item navbar__text">
+                        <a className="navbar-item navbar__text" href="about">
                             About
                         </a>
                         <div className="navbar-item has-dropdown is-hoverable drop">

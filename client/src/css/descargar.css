@@ -91,3 +91,27 @@
 .zoom-container{
     transform: translate(20%,5%);
 }
+
+/*About*/
+
+.accordion__container{
+    width: 700px;
+    height: 100px;
+}
+#float-btn{
+    background-color: var(--background-color);
+    border-radius: 50%;
+    border: var(--background-color);
+    width: 50px;
+    height: 50px;
+}
+.chat-btn__icon{
+    font-size: 30px;
+    transform: translateX(-1px);
+}
+.a-btn{
+    color: var(--white);
+}
+.a-btn:hover{
+    color: var(--off-white);
+}
