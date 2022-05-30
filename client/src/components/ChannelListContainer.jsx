@@ -8,6 +8,9 @@ import LogoutIcon from '../assets/logout.png';
 import '../css/theme.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/fontawesome-free-solid';
+import { Button, ButtonToolbar, ButtonGroup} from 'react-bootstrap';
+// import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+import { GearFill } from 'react-bootstrap-icons';
 // import { faUser } from '@fortawesome/free-brands-svg-icons';
 
 const cookies = new Cookies();
@@ -67,6 +70,13 @@ const SideBar = ({ logout }) => (
                 <span id="darkModeSpan" className="slider light-theme-span dot s-absolute s-h-24px s-w-24px s-cursor-pointer s-shadow-bottom s-circle"></span>
             </label>
         </div>
+        <ButtonToolbar  className="gear-btn">
+            <ButtonGroup>
+                <Button>
+                    <GearFill className="gear-icon"/>
+                </Button>
+            </ButtonGroup>
+        </ButtonToolbar>
         <div className="icon-container" onClick={settings}>
             <FontAwesomeIcon icon={faUser} className="fa-solid setting-icon"/>
             {/* <FontAwesomeIcon icon="fa-gear" className="fa-solid setting-icon"/> */}

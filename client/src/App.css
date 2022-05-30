@@ -44,6 +44,13 @@ body {
 .a-btn:hover{
   color: var(--off-white);
 }
+
+.gear-btn{
+  width:60px;
+  height: 20px;
+  transform: translate(15px,300px);
+}
+
 /* single */
 .channel-preview__item >p{
   transform: translateY(8px);
@@ -1920,7 +1927,7 @@ div.rta__autocomplete.str-chat__emojisearch {
 }
 
 .icon-container{
-  transform: translate(27%,900%);
+  transform: translate(27%,800%);
   width: 45px;
   height: 45px;
   padding: 10px;
