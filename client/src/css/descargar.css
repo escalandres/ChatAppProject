@@ -115,3 +115,7 @@
 .a-btn:hover{
     color: var(--off-white);
 }
+
+.hidden{
+    display: none;
+}

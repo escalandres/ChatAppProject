@@ -20,6 +20,19 @@ const initialState = {
 function onChange(value) {
     console.log("Captcha value:", value);
   }
+
+function Toastt(){
+    const toa = document.getElementById('toast-container');
+    toa.classList.remove('hidden');
+    setTimeout(() => {  toa.classList.add('hidden'); }, 3000);
+}
+
+function Alertt(){
+    const ale = document.getElementById('alert-container');
+    ale.classList.remove('hidden');
+    setTimeout(() => {  ale.classList.add('hidden'); }, 3000);
+}
+
 const Auth = () => {
     const captcha = useRef(null);
     // const [captchaValido, cambiarCaptchaValido] = useState(null);
@@ -33,22 +46,8 @@ const Auth = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(!captcha.current.getValue()){
-            <div>
-                <Alert key='warning' variant="warning">
-                    Debe llenar el captcha
-                </Alert>
-                <ToastContainer>
-                    <Toast>
-                        <Toast.Header>
-                        <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-                        <strong className="me-auto">Bootstrap</strong>
-                        <small className="text-muted">just now</small>
-                        </Toast.Header>
-                        <Toast.Body>Llene el captcha</Toast.Body>
-                    </Toast>
-                </ToastContainer>
-            </div>
-            
+            Toastt();
+            Alertt();
         }
         else{
             const { username, password, phoneNumber, avatarURL } = form;
@@ -158,7 +157,20 @@ const Auth = () => {
                             ref={captcha}
                             sitekey="Your client site key"
                             onChange={onChange}
-                        />,
+                        />
+                        <Alert key='warning' variant="warning" id="alert-container" className="hidden">
+                            Debe llenar el captcha
+                        </Alert>
+                        <ToastContainer id="toast-container" className="hidden">
+                            <Toast>
+                                <Toast.Header>
+                                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                                <strong className="me-auto">Bootstrap</strong>
+                                <small className="text-muted">just now</small>
+                                </Toast.Header>
+                                <Toast.Body>Llene el captcha</Toast.Body>
+                            </Toast>
+                        </ToastContainer>
                         <div className="auth__form-container_fields-content_button">
                             <button>{isSignup ? "Sign Up" : "Sign In"}</button>
                         </div>
