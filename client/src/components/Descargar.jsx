@@ -1,9 +1,13 @@
-import React from 'react';
-import { Carousel, ProgressBar, Button} from 'react-bootstrap';
+import React, {useState} from 'react';
+import { Carousel, ProgressBar, Button, DropdownButton, Dropdown, Alert, ToastContainer, Toast} from 'react-bootstrap';
 import $ from 'jquery';
 import Navbar from './Navbar';
 import Example from './Example';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios'
+// import fileDownload from 'js-file-download';
+import { useDownloadFile } from "./useDownloadFile";
+import Downloader from './Downloader';
 
 import 'bulma/css/bulma.min.css'
 import 'font-awesome/css/font-awesome.min.css';
@@ -24,6 +28,17 @@ $(document).ready(function(){
     });
 });
 
+function Toastt(){
+    const toa = document.getElementById('toast-container');
+    toa.classList.remove('hidden');
+    setTimeout(() => {  toa.classList.add('hidden'); }, 3000);
+}
+
+function Alertt(){
+    const ale = document.getElementById('alert-container');
+    ale.classList.remove('hidden');
+    setTimeout(() => {  ale.classList.add('hidden'); }, 3000);
+}
 
 // const Descargar = () => {
 class Descargar extends React.Component {
@@ -39,6 +54,7 @@ class Descargar extends React.Component {
           };
         
     }
+
     progressInstance = () =>{
         this.setState((state, props) => ({
             progress: 0
@@ -55,6 +71,7 @@ class Descargar extends React.Component {
             progress: 0
         }));
     };
+    
     render() {
         return (
             <div>
@@ -110,7 +127,24 @@ class Descargar extends React.Component {
                     <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 10}}>
                         <a className="a-btn" href="login"><FontAwesomeIcon className="fa-solid chat-btn__icon" icon="fa-comment-dots" /></a>
                     </Button>
-
+                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                        <Dropdown.Item href="#" onClick={Alertt}>Alert action</Dropdown.Item>
+                        <Dropdown.Item href="#" onClick={Toastt}>Toast action</Dropdown.Item>
+                    </DropdownButton>
+                    <br></br>                
+                    <ToastContainer id="toast-container" className="hidden">
+                        <Toast>
+                            <Toast.Header>
+                            <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                            <strong className="me-auto">Bootstrap</strong>
+                            <small className="text-muted">just now</small>
+                            </Toast.Header>
+                            <Toast.Body>Llene el captcha</Toast.Body>
+                        </Toast>
+                    </ToastContainer>
+                    <Alert key='warning' variant="warning" id="alert-container" className="hidden">
+                        Debe llenar el captcha
+                    </Alert>
                 </section>
                 
             </div>    
