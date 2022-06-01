@@ -51,6 +51,10 @@ body {
   transform: translate(15px,300px);
 }
 
+.auth__form-container_fields-content_button{
+  transform: translateY(-25px);
+}
+
 /* single */
 .channel-preview__item >p{
   transform: translateY(8px);

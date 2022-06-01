@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/fontawesome-free-solid';
+import ReCAPTCHA from "react-google-recaptcha";
 // import signinImage from '../assets/signup.jpg';
 
 const cookies = new Cookies();
@@ -16,8 +17,12 @@ const initialState = {
     phoneNumber: '',
     avatarURL: '',
 }
-
+function onChange(value) {
+    console.log("Captcha value:", value);
+  }
 const Auth = () => {
+    const captcha = useRef(null);
+    // const [captchaValido, cambiarCaptchaValido] = useState(null);
     const [form, setForm] = useState(initialState);
     const [isSignup, setIsSignup] = useState(true);
 
@@ -27,28 +32,34 @@ const Auth = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const { username, password, phoneNumber, avatarURL } = form;
-
-        const URL = 'http://localhost:5000/auth';
-        // const URL = 'https://chat-app.herokuapp.com/auth';
-
-        const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
-            username, password, fullName: form.fullName, phoneNumber, avatarURL,
-        });
-
-        cookies.set('token', token);
-        cookies.set('username', username);
-        cookies.set('fullName', fullName);
-        cookies.set('userId', userId);
-
-        if(isSignup) {
-            cookies.set('phoneNumber', phoneNumber);
-            cookies.set('avatarURL', avatarURL);
-            cookies.set('hashedPassword', hashedPassword);
+        if(!captcha.current.getValue()){
+            <Alert key='warning' variant="warning">
+                Debe llenar el captcha
+            </Alert>
         }
+        else{
+            const { username, password, phoneNumber, avatarURL } = form;
 
-        window.location.reload();
+            const URL = 'http://localhost:5000/auth';
+            // const URL = 'https://chat-app.herokuapp.com/auth';
+
+            const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+                username, password, fullName: form.fullName, phoneNumber, avatarURL,
+            });
+
+            cookies.set('token', token);
+            cookies.set('username', username);
+            cookies.set('fullName', fullName);
+            cookies.set('userId', userId);
+
+            if(isSignup) {
+                cookies.set('phoneNumber', phoneNumber);
+                cookies.set('avatarURL', avatarURL);
+                cookies.set('hashedPassword', hashedPassword);
+            }
+
+            window.location.reload();
+        }
     }
 
     const switchMode = () => {
@@ -129,6 +140,12 @@ const Auth = () => {
                                 />
                             </div>
                             )}
+                            
+                        <ReCAPTCHA
+                            ref={captcha}
+                            sitekey="Your client site key"
+                            onChange={onChange}
+                        />,
                         <div className="auth__form-container_fields-content_button">
                             <button>{isSignup ? "Sign Up" : "Sign In"}</button>
                         </div>
