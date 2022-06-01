@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
-import { Button, Alert } from 'react-bootstrap';
+import { Button, Alert, ToastContainer, Toast } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/fontawesome-free-solid';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -33,9 +33,22 @@ const Auth = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(!captcha.current.getValue()){
-            <Alert key='warning' variant="warning">
-                Debe llenar el captcha
-            </Alert>
+            <div>
+                <Alert key='warning' variant="warning">
+                    Debe llenar el captcha
+                </Alert>
+                <ToastContainer>
+                    <Toast>
+                        <Toast.Header>
+                        <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                        <strong className="me-auto">Bootstrap</strong>
+                        <small className="text-muted">just now</small>
+                        </Toast.Header>
+                        <Toast.Body>Llene el captcha</Toast.Body>
+                    </Toast>
+                </ToastContainer>
+            </div>
+            
         }
         else{
             const { username, password, phoneNumber, avatarURL } = form;
