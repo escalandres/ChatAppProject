@@ -5,7 +5,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 import ChatIcon from '../assets/chatLogo.png';
 import LogoutIcon from '../assets/logout.png';
-import '../css/theme.css';
+import '../css/theme1.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/fontawesome-free-solid';
 import { Button, ButtonToolbar, ButtonGroup} from 'react-bootstrap';

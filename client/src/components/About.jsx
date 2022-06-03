@@ -10,7 +10,7 @@ class About extends React.Component{
     
     render() {
         return (
-            <div className="about__container">
+            <div className="about__container section-white">
                 <Navbar />
                 <div className="accordion__container">
                     <Accordion defaultActiveKey="0">

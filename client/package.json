@@ -35,6 +35,7 @@
     "react-google-recaptcha": "^2.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
+    "sass": "^1.52.2",
     "stream-chat": "^6.3.0",
     "stream-chat-react": "^8.0.0",
     "universal-cookie": "^4.0.4",
