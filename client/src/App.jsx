@@ -7,7 +7,7 @@ import { ChannelListContainer, ChannelContainer, Auth} from './components';
 
 import 'stream-chat-react/dist/css/index.css';
 import './App.css';
-import './css/theme.css';
+import './css/theme1.css';
 
 const cookies = new Cookies();
 

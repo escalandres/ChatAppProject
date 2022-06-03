@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Navbar from './Navbar';
 import Example from './Example';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Purec from './Purec';
 import axios from 'axios'
 // import fileDownload from 'js-file-download';
 import { useDownloadFile } from "./useDownloadFile";
@@ -145,6 +146,7 @@ class Descargar extends React.Component {
                     <Alert key='warning' variant="warning" id="alert-container" className="hidden">
                         Debe llenar el captcha
                     </Alert>
+                    {/* <Purec/> */}
                 </section>
                 
             </div>    
