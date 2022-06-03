@@ -96,7 +96,8 @@
 
 .accordion__container{
     width: 700px;
-    height: 100px;
+    height: 90px;
+    transform:  translate(20px,20px);
 }
 #float-btn{
     background-color: var(--background-color);
@@ -118,4 +119,20 @@
 
 .hidden{
     display: none;
+}
+
+.video__container{
+    transform: translate(750px,-70px);
+    z-index: 0;
+}
+
+.cards{
+    float: left;
+}
+#card-img1{
+    height: 160px;
+}
+#card-img2{
+    width: 286px;
+    height: 160px;
 }
