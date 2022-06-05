@@ -5,12 +5,6 @@ import Navbar from './Navbar';
 import Example from './Example';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Purec from './Purec';
-import axios from 'axios'
-// import fileDownload from 'js-file-download';
-import { useDownloadFile } from "./useDownloadFile";
-import Downloader from './Downloader';
-import Crc from '../assets/crc.ino';
-import Archivos from './Archivos';
 
 import 'bulma/css/bulma.min.css'
 import 'font-awesome/css/font-awesome.min.css';
@@ -59,22 +53,22 @@ class Descargar extends React.Component {
         
     }
 
-    progressInstance = () =>{
-        this.setState((state, props) => ({
-            progress: 0
-        }));
-        for(let i=0;i<=100;i+=0.1){
-            // this.setState({now: i});
-            this.setState((state, props) => ({
-                progress: i
-            }));
-        }
-    };
-    resetProgress = () =>{
-        this.setState((state, props) => ({
-            progress: 0
-        }));
-    };
+    // progressInstance = () =>{
+    //     this.setState((state, props) => ({
+    //         progress: 0
+    //     }));
+    //     for(let i=0;i<=100;i+=0.1){
+    //         // this.setState({now: i});
+    //         this.setState((state, props) => ({
+    //             progress: i
+    //         }));
+    //     }
+    // };
+    // resetProgress = () =>{
+    //     this.setState((state, props) => ({
+    //         progress: 0
+    //     }));
+    // };
     
     render() {
         return (
@@ -127,34 +121,36 @@ class Descargar extends React.Component {
                     
                 </section>
                 <section id="section3" className="section-area section-grey">
-                    {/* <ProgressBar animated now={now} label={`${now}%`} visuallyHidden /> */}
-                    <Button variant="primary" onClick={this.progressInstance}>Primary</Button>
+        
+                    
+                    {/* <Button variant="primary" onClick={this.progressInstance}>Primary</Button>
                     <Button variant="warning" onClick={this.resetProgress}>Reset</Button>
-                    <ProgressBar animated now={this.state.progress} label={`${this.state.progress}%`}  visuallyHidden/>
+                    <ProgressBar animated now={this.state.progress} label={`${this.state.progress}%`}  visuallyHidden/> */}
                     <br></br>
                     <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 10}}>
                         <a className="a-btn" href="login"><FontAwesomeIcon className="fa-solid chat-btn__icon" icon="fa-comment-dots" /></a>
                     </Button>
-                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                        <Dropdown.Item href="#" onClick={Alertt}>Alert action</Dropdown.Item>
-                        <Dropdown.Item href="#" onClick={Toastt}>Toast action</Dropdown.Item>
-                    </DropdownButton>
-                    <br></br>                
-                    <ToastContainer id="toast-container" className="hidden">
-                        <Toast>
-                            <Toast.Header>
-                            <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-                            <strong className="me-auto">Bootstrap</strong>
-                            <small className="text-muted">just now</small>
-                            </Toast.Header>
-                            <Toast.Body>Llene el captcha</Toast.Body>
-                        </Toast>
-                    </ToastContainer>
-                    <Alert key='warning' variant="warning" id="alert-container" className="hidden">
-                        Debe llenar el captcha
-                    </Alert>
                     <Purec/>
-                    <Archivos />
+                    <div className="dropdown__menu">
+                        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                            <Dropdown.Item href="#" onClick={Alertt}>Alert action</Dropdown.Item>
+                            <Dropdown.Item href="#" onClick={Toastt}>Toast action</Dropdown.Item>
+                        </DropdownButton>
+                        <br></br>                
+                        <ToastContainer id="toast-container" className="hidden">
+                            <Toast>
+                                <Toast.Header>
+                                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                                <strong className="me-auto">Bootstrap</strong>
+                                <small className="text-muted">just now</small>
+                                </Toast.Header>
+                                <Toast.Body>Llene el captcha</Toast.Body>
+                            </Toast>
+                        </ToastContainer>
+                        <Alert key='warning' variant="warning" id="alert-container" className="hidden">
+                            Debe llenar el captcha
+                        </Alert>
+                    </div>
                 </section>
                 
             </div>    
