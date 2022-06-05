@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useDownloadFile } from "./useDownloadFile";
 import Downloader from './Downloader';
 import Crc from '../assets/crc.ino';
+import Archivos from './Archivos';
 
 import 'bulma/css/bulma.min.css'
 import 'font-awesome/css/font-awesome.min.css';
@@ -21,6 +22,7 @@ import ImgSec1 from '../assets/ImgSec1.PNG';
 import ImgSec2 from '../assets/ImgSec2.PNG';
 import ImgSec3 from '../assets/ImgSec3.PNG';
 import chat from '../assets/chitchat.png';
+import laptop from '../assets/laptop.PNG';
 
 $(document).ready(function(){
     $('.zoom').hover(function() {
@@ -115,7 +117,11 @@ class Descargar extends React.Component {
                     
                 </section>
                 <section id="section2" className="section-area section-white">
+                    <div className='laptop__container'>
+                        <img src={laptop} alt="laptop"/>
+                    </div>
                     <div className="zoom-container">
+                            <h2 className="h2-descargar">Descarga Chat App</h2>
                         <img src={chat} className="zoom" alt="zoom"/>
                     </div>
                     
@@ -125,7 +131,6 @@ class Descargar extends React.Component {
                     <Button variant="primary" onClick={this.progressInstance}>Primary</Button>
                     <Button variant="warning" onClick={this.resetProgress}>Reset</Button>
                     <ProgressBar animated now={this.state.progress} label={`${this.state.progress}%`}  visuallyHidden/>
-                    <a className='download-btn' href='//client/src/assets/crc' download={Crc}>Descargar</a>
                     <br></br>
                     <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 10}}>
                         <a className="a-btn" href="login"><FontAwesomeIcon className="fa-solid chat-btn__icon" icon="fa-comment-dots" /></a>
@@ -149,6 +154,7 @@ class Descargar extends React.Component {
                         Debe llenar el captcha
                     </Alert>
                     <Purec/>
+                    <Archivos />
                 </section>
                 
             </div>    

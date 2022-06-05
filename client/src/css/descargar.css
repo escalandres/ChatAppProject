@@ -89,7 +89,13 @@
     transform: scale(1.8);
 }
 .zoom-container{
-    transform: translate(20%,5%);
+    transform: translate(800px,-300px);
+}
+
+.h2-descargar{
+    transform: translateY(-100px);
+    color: var(--section-color);
+    font-weight: 700;
 }
 
 /*About*/
@@ -145,4 +151,28 @@
 .button-success {
     background: rgb(28, 184, 65);
     /* this is a green */
+}
+
+.home__message__btn{
+    margin-top: 4rem;
+}
+
+#btn__download{
+    background-color: var(--background-color);
+    border-color: var(--background-color);
+    color:  var(--letter-color);
+    margin-right: 20px;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    border-radius: 28px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+#btn__download:hover{
+    text-decoration: underline;
+    box-shadow: 0px 6px 6px 0px rgba(30, 30, 31, 0.5);
 }

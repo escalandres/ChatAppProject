@@ -48,6 +48,10 @@ app.get('/img', (req,res)=>{
     res.sendFile(__dirname+'/img/latest.jpg');
 });
 
+app.get('/icon', (req,res)=>{
+    res.sendFile(__dirname+'/img/laptop.PNG');
+});
+
 app.use('/auth', authRoutes);
 
 // const storage = multer.diskStorage({
