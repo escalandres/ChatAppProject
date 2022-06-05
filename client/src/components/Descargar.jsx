@@ -5,6 +5,8 @@ import Navbar from './Navbar';
 import Example from './Example';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Purec from './Purec';
+import Dropzone from './Dropzone';
+import axios from 'axios';
 
 import 'bulma/css/bulma.min.css'
 import 'font-awesome/css/font-awesome.min.css';
@@ -130,29 +132,36 @@ class Descargar extends React.Component {
                     <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 10}}>
                         <a className="a-btn" href="login"><FontAwesomeIcon className="fa-solid chat-btn__icon" icon="fa-comment-dots" /></a>
                     </Button>
-                    <Purec/>
-                    <div className="dropdown__menu">
-                        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                            <Dropdown.Item href="#" onClick={Alertt}>Alert action</Dropdown.Item>
-                            <Dropdown.Item href="#" onClick={Toastt}>Toast action</Dropdown.Item>
-                        </DropdownButton>
-                        <br></br>                
-                        <ToastContainer id="toast-container" className="hidden">
-                            <Toast>
-                                <Toast.Header>
-                                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-                                <strong className="me-auto">Bootstrap</strong>
-                                <small className="text-muted">just now</small>
-                                </Toast.Header>
-                                <Toast.Body>Llene el captcha</Toast.Body>
-                            </Toast>
-                        </ToastContainer>
-                        <Alert key='warning' variant="warning" id="alert-container" className="hidden">
-                            Debe llenar el captcha
-                        </Alert>
+                    
+                    <div className='sect3'>
+                        <Purec/>
+                        <div className="dropdown__menu">
+                            <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                                <Dropdown.Item href="#" onClick={Alertt}>Alert action</Dropdown.Item>
+                                <Dropdown.Item href="#" onClick={Toastt}>Toast action</Dropdown.Item>
+                            </DropdownButton>
+                            <br></br>                
+                            <ToastContainer id="toast-container" className="hidden">
+                                <Toast>
+                                    <Toast.Header>
+                                    <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                                    <strong className="me-auto">Bootstrap</strong>
+                                    <small className="text-muted">just now</small>
+                                    </Toast.Header>
+                                    <Toast.Body>Llene el captcha</Toast.Body>
+                                </Toast>
+                            </ToastContainer>
+                            <Alert key='warning' variant="warning" id="alert-container" className="hidden">
+                                Debe llenar el captcha
+                            </Alert>
+                        </div>
                     </div>
+                    
                 </section>
-                
+                <section id="section4" className="section-area section-white">
+                <Dropzone />
+                </section>
+
             </div>    
         )
     }

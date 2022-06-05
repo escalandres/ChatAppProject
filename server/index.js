@@ -1,7 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
+const uuid = require("uuid").v4;
+
 const authRoutes = require("./routes/auth.js");
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -53,6 +56,31 @@ app.get('/icon', (req,res)=>{
 });
 
 app.use('/auth', authRoutes);
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null, "uploads");
+    },
+    filename: (req, file, cb) => {
+        const {originalname} = file;
+        cb(null, `${uuid()}-${originalname}`);
+    }
+})
+
+
+const fileFilter = (req, file, cb) =>{
+    if(file.mimetype.split("/")[0]==='image'){
+        cb(null, true)
+    }
+    else{
+        cb(new Error("file is not of the correct type"), false)
+    }
+}
+const upload = multer({storage, fileFilter, limits: { fileSize: 1000000000, files: 1 }});
+
+app.post('/upload', upload.array("file"), (req, res) =>{
+    res.json({ status: "success222"});
+})
 
 // const storage = multer.diskStorage({
 // 	destination: `${_dirname}/uploads/`,

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
+import Dropzone from './Dropzone';
+import axios from 'axios';
 import 'font-awesome/css/font-awesome.min.css';
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 import ChatIcon from '../assets/chatLogo.png';
@@ -16,7 +18,15 @@ import { GearFill } from 'react-bootstrap-icons';
 const cookies = new Cookies();
 
 function settings(){
-    alert('hola')
+    const URL = 'http://localhost:5000/upload';
+    <Dropzone />
+    // axios.post(`${URL}`, {newItem})
+    //   .then(res => {
+    //     console.log(res);
+    //     console.log(res.data);
+    //   })
+    // alert('hola')
+    
 }
 
 function darkMode(){
