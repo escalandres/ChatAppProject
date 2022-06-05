@@ -140,3 +140,9 @@
     width: 286px;
     height: 160px;
 }
+
+/* Purec */
+.button-success {
+    background: rgb(28, 184, 65);
+    /* this is a green */
+}

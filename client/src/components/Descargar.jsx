@@ -9,6 +9,7 @@ import axios from 'axios'
 // import fileDownload from 'js-file-download';
 import { useDownloadFile } from "./useDownloadFile";
 import Downloader from './Downloader';
+import Crc from '../assets/crc.ino';
 
 import 'bulma/css/bulma.min.css'
 import 'font-awesome/css/font-awesome.min.css';
@@ -124,6 +125,7 @@ class Descargar extends React.Component {
                     <Button variant="primary" onClick={this.progressInstance}>Primary</Button>
                     <Button variant="warning" onClick={this.resetProgress}>Reset</Button>
                     <ProgressBar animated now={this.state.progress} label={`${this.state.progress}%`}  visuallyHidden/>
+                    <a className='download-btn' href='//client/src/assets/crc' download={Crc}>Descargar</a>
                     <br></br>
                     <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 10}}>
                         <a className="a-btn" href="login"><FontAwesomeIcon className="fa-solid chat-btn__icon" icon="fa-comment-dots" /></a>
@@ -146,7 +148,7 @@ class Descargar extends React.Component {
                     <Alert key='warning' variant="warning" id="alert-container" className="hidden">
                         Debe llenar el captcha
                     </Alert>
-                    {/* <Purec/> */}
+                    <Purec/>
                 </section>
                 
             </div>    
