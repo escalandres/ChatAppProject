@@ -158,9 +158,9 @@ class Descargar extends React.Component {
                     </div>
                     
                 </section>
-                <section id="section4" className="section-area section-white">
+                {/* <section id="section4" className="section-area section-white">
                 <Dropzone />
-                </section>
+                </section> */}
 
             </div>    
         )

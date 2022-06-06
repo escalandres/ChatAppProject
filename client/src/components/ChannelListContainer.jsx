@@ -10,7 +10,7 @@ import LogoutIcon from '../assets/logout.png';
 import '../css/theme1.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/fontawesome-free-solid';
-import { Button, ButtonToolbar, ButtonGroup} from 'react-bootstrap';
+import { Button, ButtonToolbar, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter} from 'react-bootstrap';
 // import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import { GearFill } from 'react-bootstrap-icons';
 // import { faUser } from '@fortawesome/free-brands-svg-icons';
@@ -18,15 +18,18 @@ import { GearFill } from 'react-bootstrap-icons';
 const cookies = new Cookies();
 
 function settings(){
-    const URL = 'http://localhost:5000/upload';
-    <Dropzone />
-    // axios.post(`${URL}`, {newItem})
-    //   .then(res => {
-    //     console.log(res);
-    //     console.log(res.data);
-    //   })
-    // alert('hola')
-    
+    <Modal>
+        <ModalHeader>
+            Actualice su foto
+        </ModalHeader>
+        <ModalBody>
+            <Dropzone />
+        </ModalBody>
+        <ModalFooter>
+
+        </ModalFooter>
+
+    </Modal>
 }
 
 function darkMode(){
@@ -87,8 +90,11 @@ const SideBar = ({ logout }) => (
                 </Button>
             </ButtonGroup>
         </ButtonToolbar>
-        <div className="icon-container" onClick={settings}>
-            <FontAwesomeIcon icon={faUser} className="fa-solid setting-icon"/>
+        <div className="icon-container">
+            <a href='update-photo' >
+                <FontAwesomeIcon icon={faUser} className="fa-solid setting-icon"/>
+            </a>
+            
             {/* <FontAwesomeIcon icon="fa-gear" className="fa-solid setting-icon"/> */}
         </div>
     </div>

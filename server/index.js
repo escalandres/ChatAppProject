@@ -63,7 +63,9 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         const {originalname} = file;
-        cb(null, `${uuid()}-${originalname}`);
+        // cb(null, `${uuid()}-${originalname}`);
+        cb(null, `${req.id}-${originalname}`);
+
     }
 })
 
@@ -79,7 +81,9 @@ const fileFilter = (req, file, cb) =>{
 const upload = multer({storage, fileFilter, limits: { fileSize: 1000000000, files: 1 }});
 
 app.post('/upload', upload.array("file"), (req, res) =>{
-    res.json({ status: "success222"});
+    const { id,  } = req.body;
+    client.user('123').update({ image: cookies.get('avatarURL'), });
+    res.json({ status: "success"});
 })
 
 // const storage = multer.diskStorage({

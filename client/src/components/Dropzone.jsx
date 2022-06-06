@@ -6,7 +6,8 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/fontawesome-free-solid';
 import { Alert} from 'react-bootstrap';
-
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 function Alert1(){
     const ale = document.getElementById('fileSelected');
@@ -34,6 +35,8 @@ function UploadFile(){
         bodyFormData.append('file', input.files[0]);
         console.log("File Seleccionado : ", input.files[0]);
     }
+    bodyFormData.append('id', cookies.get('userId'));
+    
     axios.post("http://localhost:5000/upload", bodyFormData, {
         headers: {
         "Content-Type": "multipart/form-data",
@@ -97,6 +100,7 @@ function Dropzone(){
   
   return (
     <div>
+        <h2>Cambie su photo de perfil</h2>
         <Alert key='warning' variant="warning" id="fileSelected" className="hidden">
             Archivo seleccionado!
         </Alert>
@@ -106,6 +110,7 @@ function Dropzone(){
         <Alert key='danger' variant="danger" id="fileError" className="hidden">
             Error al subir el archivo!
         </Alert>
+
         <form id="form-file-upload" onDragEnter={handleDrag} onSubmit={(e) => e.preventDefault()}>
         <input ref={inputRef} type="file" id="input-file-upload" accept=".jpeg,.png" multiple={false} onChange={handleChange} />
         <label id="label-file-upload" htmlFor="input-file-upload" className={dragActive ? "drag-active" : "" }>
