@@ -59,6 +59,11 @@ body {
 .channel-preview__item >p{
   transform: translateY(9px);
 }
+
+.channel-preview__item >p:hover{
+  transform: translateY(0px);
+}
+
 .channel-preview__wrapper__selected > .channel-preview__item{
   transform: translateY(9px);
 }
