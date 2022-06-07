@@ -35,7 +35,7 @@ function UploadFile(){
         bodyFormData.append('file', input.files[0]);
         console.log("File Seleccionado : ", input.files[0]);
     }
-    bodyFormData.append('id', cookies.get('userId'));
+    // bodyFormData.append('id', cookies.get('userId'));
     
     axios.post("http://localhost:5000/upload", bodyFormData, {
         headers: {

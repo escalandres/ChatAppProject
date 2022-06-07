@@ -14,22 +14,11 @@ import { Button, ButtonToolbar, ButtonGroup, Modal, ModalHeader, ModalBody, Moda
 // import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import { GearFill } from 'react-bootstrap-icons';
 // import { faUser } from '@fortawesome/free-brands-svg-icons';
-
+import Moda from './Moda';
 const cookies = new Cookies();
 
 function settings(){
-    <Modal>
-        <ModalHeader>
-            Actualice su foto
-        </ModalHeader>
-        <ModalBody>
-            <Dropzone />
-        </ModalBody>
-        <ModalFooter>
-
-        </ModalFooter>
-
-    </Modal>
+    return <Moda />
 }
 
 function darkMode(){
@@ -90,12 +79,17 @@ const SideBar = ({ logout }) => (
                 </Button>
             </ButtonGroup>
         </ButtonToolbar>
+        {/* <div className="icon-container" onClick={settings}>
+        <FontAwesomeIcon icon={faUser} className="fa-solid setting-icon"/> */}
+
+            
+            {/* <FontAwesomeIcon icon="fa-gear" className="fa-solid setting-icon"/> */}
+        {/* </div> */}
         <div className="icon-container">
+            
             <a href='update-photo' >
                 <FontAwesomeIcon icon={faUser} className="fa-solid setting-icon"/>
             </a>
-            
-            {/* <FontAwesomeIcon icon="fa-gear" className="fa-solid setting-icon"/> */}
         </div>
     </div>
 );

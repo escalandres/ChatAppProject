@@ -57,7 +57,10 @@ body {
 
 /* single */
 .channel-preview__item >p{
-  transform: translateY(8px);
+  transform: translateY(9px);
+}
+.channel-preview__wrapper__selected > .channel-preview__item{
+  transform: translateY(9px);
 }
 a{
   text-decoration: none;
@@ -923,6 +926,7 @@ a:hover{
   font-size: 18px;
   color: var(--team-channel-header-name);
   margin-right: 8px;
+  transform: translateY(8px);
 }
 
 .team-channel-header__name-wrapper {

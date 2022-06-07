@@ -41,7 +41,7 @@ const Home = () => {
                             <a id="browser" href="#" className="btn__browser home__btn">Abrir Chat en tu navegador</a>
                         </div>
                     </div>
-                    <div className="image__right__container hidden">
+                    <div className="image__right__container">
                         <div className="image__right__div">
                             <img id="messageIcon" className="image__right  animation" src={chat} alt="Chat Image"/>
                         </div>

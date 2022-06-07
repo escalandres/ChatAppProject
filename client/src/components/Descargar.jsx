@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Carousel, ProgressBar, Button, DropdownButton, Dropdown, Alert, ToastContainer, Toast} from 'react-bootstrap';
+import { Carousel, ProgressBar, Button, DropdownButton, Dropdown, Alert, ToastContainer, Toast, Modal, ModalHeader, ModalBody, ModalFooter} from 'react-bootstrap';
 import $ from 'jquery';
 import Navbar from './Navbar';
 import Example from './Example';
@@ -19,6 +19,13 @@ import ImgSec2 from '../assets/ImgSec2.PNG';
 import ImgSec3 from '../assets/ImgSec3.PNG';
 import chat from '../assets/chitchat.png';
 import laptop from '../assets/laptop.PNG';
+import Moda from './Moda';
+
+let abierto = false;
+function settings(){
+    return <Moda />
+}
+
 
 $(document).ready(function(){
     $('.zoom').hover(function() {
@@ -51,10 +58,15 @@ class Descargar extends React.Component {
           this.state = {
             show: false,
             progress: 0,
+            abierto: false,
           };
         
     }
-
+    abrirModal=()=>{
+        this.setState((state, props) => ({
+            abierto: !this.state.abierto
+        }));
+    }
     // progressInstance = () =>{
     //     this.setState((state, props) => ({
     //         progress: 0
@@ -123,11 +135,6 @@ class Descargar extends React.Component {
                     
                 </section>
                 <section id="section3" className="section-area section-grey">
-        
-                    
-                    {/* <Button variant="primary" onClick={this.progressInstance}>Primary</Button>
-                    <Button variant="warning" onClick={this.resetProgress}>Reset</Button>
-                    <ProgressBar animated now={this.state.progress} label={`${this.state.progress}%`}  visuallyHidden/> */}
                     <br></br>
                     <Button id="float-btn" variant="primary" style={{position: 'fixed', top: '80%', right: 10}}>
                         <a className="a-btn" href="login"><FontAwesomeIcon className="fa-solid chat-btn__icon" icon="fa-comment-dots" /></a>
@@ -158,6 +165,25 @@ class Descargar extends React.Component {
                     </div>
                     
                 </section>
+                
+                <section id="section4" className="section-area section-white">
+                <Dropzone />
+                {/* <Button variant="primary" onClick={this.abrirModal}>Abrir</Button>
+
+                    <Modal isOpen={this.state.abierto}>
+                        <ModalHeader>
+                            Actualice su foto
+                        </ModalHeader>
+                        <ModalBody>
+                            <input type="file"/>
+                        </ModalBody>
+                        <ModalFooter>
+
+                        </ModalFooter>
+
+                    </Modal> */}
+                </section>
+                
                 {/* <section id="section4" className="section-area section-white">
                 <Dropzone />
                 </section> */}

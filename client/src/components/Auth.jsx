@@ -45,11 +45,11 @@ const Auth = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(!captcha.current.getValue()){
-            Toastt();
-            Alertt();
-        }
-        else{
+        // if(!captcha.current.getValue()){
+        //     Toastt();
+        //     Alertt();
+        // }
+        // else{
             const { username, password, phoneNumber, avatarURL } = form;
 
             const URL = 'http://localhost:5000/auth';
@@ -71,7 +71,7 @@ const Auth = () => {
             }
 
             window.location.reload();
-        }
+        //}
     }
 
     const switchMode = () => {
@@ -153,11 +153,11 @@ const Auth = () => {
                             </div>
                             )}
                             
-                        <ReCAPTCHA
+                        {/* <ReCAPTCHA
                             ref={captcha}
                             sitekey="Your client site key"
                             onChange={onChange}
-                        />
+                        /> */}
                         <Alert key='warning' variant="warning" id="alert-container" className="hidden">
                             Debe llenar el captcha
                         </Alert>
